@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
   },
+
   searchDivContainer: {
     marginTop: "70px",
     width: "100%",
@@ -18,17 +19,18 @@ const useStyles = makeStyles((theme) => ({
 
   searchField: {
     "& label.Mui-focused": {
-      color: "#498522",
+      color: "#87A437",
     },
     "& .MuiOutlinedInput-root": {
       "&:hover fieldset": {
         borderColor: "#4C4A46",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "#498522",
+        borderColor: "#87A437",
       },
     },
   },
+
   searchWrapper: {
     display: "flex",
     alignItems: "center",
@@ -74,7 +76,52 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
 
-  moreInfoContainer: {},
+  overlay: {
+    height: "100vh",
+    width: "100vw",
+    top: "0",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    position: "fixed",
+    background: "rgba(49, 49, 49, 0.8)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: "10",
+  },
+
+  modalCard: {
+    width: "500px",
+    height: "220px",
+    backgroundColor: "#FFFFFF",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  modalContent: {
+    padding: "20px",
+    width: "100%",
+  },
+
+  modalHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingBottom: "30px",
+  },
+
+  label: {
+    fontSize: "22px",
+  },
+
+  modalBtnContainer: {
+    height: "80px",
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
+  },
 
   icon: {
     marginRight: "20px",
@@ -87,19 +134,38 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     height: "100%",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
   },
+
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "100%",
   },
+
   cardContent: {
     flexGrow: 1,
   },
 
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: "50px 0",
+  tagContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+
+  tag: {
+    width: "80px",
+    height: "30px",
+    backgroundColor: "#E1ED96",
+    color: "#87A437",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  },
+
+  tagText: {
+    fontWeight: "bold",
+    color: "#4C4A46",
   },
 }));
 

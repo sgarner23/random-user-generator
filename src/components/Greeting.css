@@ -6,7 +6,7 @@
     rgba(135, 164, 55, 1) 60%
   );
   clip-path: polygon(0 0, 100% 0, 100% 74%, 0% 100%);
-  height: 350px;
+  height: 325px;
   display: flex;
   justify-content: center;
   align-items: center;

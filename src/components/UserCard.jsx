@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { usersContext } from "../store/usersStore";
 import {
   Typography,
   Button,
@@ -7,19 +8,32 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Box,
 } from "@material-ui/core";
 
 import useStyles from "../styles";
 import MoreUserInfo from "./MoreUserInfo";
+import Tag from "./Tag";
 
 function UserCard({ userName, profilePic, userEmail, index }) {
+  const { usersState, updateUsers } = useContext(usersContext);
   const [displayMoreInfo, setDisplayMoreInfo] = useState(false);
-
   const classes = useStyles();
 
   const viewMoreDetail = () => {
     setDisplayMoreInfo(!displayMoreInfo);
   };
+
+  const addTagToCard = () => {
+    updateUsers({ type: "CURRENT_USER_INDEX", value: index });
+    updateUsers({ type: "DISPLAY_TAG_MODAL" });
+  };
+
+  const listOfTags = usersState.usersData[index].tags
+    ? usersState.usersData[index].tags.map((tag) => {
+        return <Tag text={tag} />;
+      })
+    : null;
 
   return (
     <Grid item xs={12} sm={6} md={4}>
@@ -33,14 +47,15 @@ function UserCard({ userName, profilePic, userEmail, index }) {
           <Typography gutterBottom variant="h5">
             {userName}
           </Typography>
-          <Typography>{`Email: ${userEmail}`}</Typography>
+          <Typography noWrap>{`Email: ${userEmail}`}</Typography>
           {displayMoreInfo && <MoreUserInfo index={index} />}
         </CardContent>
+        <Box className={classes.tagContainer}>{listOfTags}</Box>
         <CardActions>
           <Button size="small" color="primary" onClick={viewMoreDetail}>
             {displayMoreInfo ? "View Less" : "View More"}
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={addTagToCard}>
             Add Tag
           </Button>
         </CardActions>

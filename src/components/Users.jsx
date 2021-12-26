@@ -10,6 +10,7 @@ function Users() {
   const { usersState, updateUsers } = useContext(usersContext);
 
   const classes = useStyles();
+
   useEffect(() => {
     const users = getUserList();
     users.then((res) => {
@@ -30,7 +31,7 @@ function Users() {
                 userEmail={user.email}
               />
             ))
-          : null}
+          : "Loading..."}
       </Grid>
     </Container>
   );

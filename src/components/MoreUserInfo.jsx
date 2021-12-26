@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { usersContext } from "../store/usersStore";
-import { Typography } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import useStyles from "../styles";
 
 function MoreUserInfo({ index }) {
@@ -8,10 +8,14 @@ function MoreUserInfo({ index }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.moreInfoContainer}>
+    <Box className={classes.moreInfoContainer}>
       <Typography>
         {usersState.usersData[index].location &&
           `Location: ${usersState.usersData[index].location.country}`}
+      </Typography>
+      <Typography>
+        {usersState.usersData[index].login.username &&
+          `Username: ${usersState.usersData[index].login.username}`}
       </Typography>
       <Typography>
         {usersState.usersData[index].dob &&
@@ -21,7 +25,7 @@ function MoreUserInfo({ index }) {
         {usersState.usersData[index].cell &&
           `Cell: ${usersState.usersData[index].cell}`}
       </Typography>
-    </div>
+    </Box>
   );
 }
 
