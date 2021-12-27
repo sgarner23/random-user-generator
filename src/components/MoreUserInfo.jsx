@@ -1,3 +1,7 @@
+/*
+  This is additional user information that is displayed to each userCard dynamically. The default is for this information to not be shown unless there's a state change from the user.  
+*/
+
 import { useContext } from "react";
 import { usersContext } from "../store/usersStore";
 import { Typography, Box } from "@material-ui/core";

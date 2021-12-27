@@ -1,3 +1,6 @@
+/*
+  Header section of the SPA
+*/
 import { Typography } from "@mui/material";
 import useStyles from "../styles";
 import "./Greeting.css";

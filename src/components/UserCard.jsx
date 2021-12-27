@@ -1,3 +1,7 @@
+/*
+  Cards that are mapped from global users array.
+*/
+
 import { useState, useContext } from "react";
 import { usersContext } from "../store/usersStore";
 import {

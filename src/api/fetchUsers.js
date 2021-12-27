@@ -1,3 +1,7 @@
+/*
+  Making API call to grab 50 random users and then this data is added to global state from the "Users" component. 
+*/
+
 import axios from "axios";
 
 async function getUserList() {

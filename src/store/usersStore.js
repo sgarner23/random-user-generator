@@ -1,3 +1,7 @@
+/*
+  This store manages all of the global state for the application. 
+*/
+
 import React, { createContext, useReducer } from "react";
 
 const initialState = {

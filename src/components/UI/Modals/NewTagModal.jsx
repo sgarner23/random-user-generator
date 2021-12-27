@@ -1,3 +1,7 @@
+/*
+  Modal that will allow users to submit tags to individual user cards and update global state so the tags are tracked via state.  
+*/
+
 import { useContext, useState } from "react";
 import { usersContext } from "../../../store/usersStore";
 import { TextField, Button } from "@material-ui/core";

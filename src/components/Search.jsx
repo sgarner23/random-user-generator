@@ -1,3 +1,7 @@
+/*
+  Manages the state of the search bar and updates the state globally. Users are able to define search params by selecting from the dropdown menu. 
+*/
+
 import { useState, useContext } from "react";
 import { usersContext } from "../store/usersStore";
 import { KeyboardArrowDown } from "@mui/icons-material";

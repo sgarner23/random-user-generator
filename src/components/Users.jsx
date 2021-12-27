@@ -1,3 +1,6 @@
+/*
+  Displays Grid of all user cards. This component is responsible for making the api call and loading the initial user data on state. 
+*/
 import { useContext, useEffect } from "react";
 import { usersContext } from "../store/usersStore";
 import { Grid, Container } from "@material-ui/core";
