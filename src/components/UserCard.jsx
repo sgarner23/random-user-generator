@@ -28,6 +28,7 @@ function UserCard({ userName, profilePic, userEmail, index }) {
     setDisplayMoreInfo(!displayMoreInfo);
   };
 
+  //Setting index of user to global state to track cards that need tags displayed then opening up modal to add tag.
   const addTagToCard = () => {
     updateUsers({ type: "CURRENT_USER_INDEX", value: index });
     updateUsers({ type: "DISPLAY_TAG_MODAL" });

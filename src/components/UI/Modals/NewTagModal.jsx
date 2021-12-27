@@ -12,6 +12,7 @@ function NewTagModal() {
   const [userInput, setUserInput] = useState("");
   const classes = useStyles();
 
+  // This function updates state locally and then within a timer (due to expensive render) updates global state.
   const handleSetUserInput = (e) => {
     setUserInput(e.target.value);
     let timer;
@@ -21,6 +22,7 @@ function NewTagModal() {
     }, 50);
   };
 
+  //Clearing out state on input after user hits submit
   const clearInput = () => {
     updateUsers({ type: "RESET_TAG_INPUT" });
   };

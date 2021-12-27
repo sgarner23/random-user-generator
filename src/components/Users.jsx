@@ -14,6 +14,7 @@ function Users() {
 
   const classes = useStyles();
 
+  //Making API call and storing results in global state.
   useEffect(() => {
     const users = getUserList();
     users.then((res) => {

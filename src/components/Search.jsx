@@ -16,6 +16,7 @@ function Search() {
 
   const classes = useStyles();
 
+  //Updating local state and then wrapping global state update inside of a timer to help optimize render costs.
   const handleUserSearchInput = (e) => {
     setUserSearch(e.target.value);
     let timer;
