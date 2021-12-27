@@ -21,8 +21,8 @@ function Users() {
   return (
     <Container className={classes.cardGrid} maxWidth="md">
       <Grid container spacing={4}>
-        {usersState.usersData
-          ? usersState.usersData.map((user, index) => (
+        {usersState.filteredUsersArr
+          ? usersState.filteredUsersArr.map((user, index) => (
               <UserCard
                 key={index}
                 index={index}

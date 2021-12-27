@@ -28,20 +28,54 @@ const reducer = (state, action) => {
 
     case "FILTER_USERS": {
       let filteredUsers = state.usersData;
-      console.log("we gonna filter");
 
+      //Checking for both names and tags then returning new filtered array
       if (state.filterType === "All") {
         filteredUsers = state.usersData.filter((user) => {
+          let tags = "";
+          if (user.tags) {
+            tags = user.tags.toString();
+          }
           return (
-            user.name.first.includes(state.userSearch) ||
-            user.name.last.includes(state.userSearch)
+            user.name.first
+              .toLowerCase()
+              .includes(state.userSearch.toLowerCase()) ||
+            user.name.last
+              .toLowerCase()
+              .includes(state.userSearch.toLowerCase()) ||
+            tags.toLowerCase().includes(state.userSearch.toLowerCase())
           );
+        });
+      }
+
+      //Checking for just name filter
+      if (state.filterType === "Name") {
+        filteredUsers = state.usersData.filter((user) => {
+          return (
+            user.name.first
+              .toLowerCase()
+              .includes(state.userSearch.toLowerCase()) ||
+            user.name.last
+              .toLowerCase()
+              .includes(state.userSearch.toLowerCase())
+          );
+        });
+      }
+
+      //Checking for just the tag name
+      if (state.filterType === "Tags") {
+        filteredUsers = state.usersData.filter((user) => {
+          let tags = "";
+          if (user.tags) {
+            tags = user.tags.toString();
+          }
+          return tags.toLowerCase().includes(state.userSearch.toLowerCase());
         });
       }
 
       return {
         ...state,
-        usersData: filteredUsers,
+        filteredUsersArr: filteredUsers,
       };
     }
 

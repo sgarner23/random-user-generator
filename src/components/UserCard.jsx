@@ -29,8 +29,8 @@ function UserCard({ userName, profilePic, userEmail, index }) {
     updateUsers({ type: "DISPLAY_TAG_MODAL" });
   };
 
-  const listOfTags = usersState.usersData[index].tags
-    ? usersState.usersData[index].tags.map((tag) => {
+  const listOfTags = usersState.filteredUsersArr[index].tags
+    ? usersState.filteredUsersArr[index].tags.map((tag) => {
         return <Tag text={tag} />;
       })
     : null;
